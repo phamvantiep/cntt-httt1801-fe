@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+<body>
+    <script>
+        function calculate(x,y,callback){
+            if(callback && typeof callback == "function")
+                return callback(x,y);
+        }
+        let add = (x,y) => x + y;
+        let subtract = (x,y) => x - y;
+        let multiply = (x,y) => x * y;
+        let divide = (x,y) => {
+            if(y === 0)
+                return "y phải khác 0";
+            else
+                return x/y;
+        }
+        //Gọi hàm
+        console.log("3 + 4 =",calculate(3,4,add));
+        console.log("10 - 6 =",calculate(10,6,subtract));
+        console.log("4 * 2 =",calculate(4,2,multiply));
+        console.log("10 / 3 =",calculate(10,3,divide));
+    </script>
+</body>
+</html>
